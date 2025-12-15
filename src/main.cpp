@@ -25,8 +25,13 @@ int main() {
         }
 
 
-        if (controller.getState() == State::DOWN) {
+        static bool linkUpSent = false;
+        if (controller.getState() == State::DOWN && !linkUpSent) {
             queue.push({EventType::LINK_UP});
+            linkUpSent = true;
+        }
+        if (controller.getState() != State::DOWN) {
+            linkUpSent = false;
         }
 
 
