@@ -8,10 +8,12 @@ class EventQueue {
 public:
 void push(const Event& e) { queue.push(e); }
 bool empty() const { return queue.empty(); }
-Event pop() {
-    Event e = queue.front();
+
+bool pop(Event& out) {
+    if (queue.empty()) return false;
+    out = queue.front();
     queue.pop();
-    return e;
+    return true;
 }
 
 private:

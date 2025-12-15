@@ -19,9 +19,8 @@ int main() {
     while (true) {
         controller.processTimers();
 
-
-        if (!queue.empty()) {
-            Event e = queue.pop();
+        Event e;
+        if (!queue.pop(e)) {    
             controller.handleEvent(e);
         }
 
