@@ -4,23 +4,23 @@
 
 
 class SoftwareTimer {
-public:
-void start(int durationMs) {
-active = true;
-expiry = std::chrono::steady_clock::now() + std::chrono::milliseconds(durationMs);
-}
+    public:
+        void start(int durationMs) {
+            active = true;
+            expiry = std::chrono::steady_clock::now() + std::chrono::milliseconds(durationMs);
+        }
 
 
-bool expired() {
-if (active && std::chrono::steady_clock::now() >= expiry) {
-active = false;
-return true;
-}
-return false;
-}
+        bool expired() {
+            if (active && std::chrono::steady_clock::now() >= expiry) {
+                active = false;
+                return true;
+            }
+            return false;
+        }
 
 
-private:
-bool active{false};
-std::chrono::steady_clock::time_point expiry;
+    private:
+        bool active{false};
+        std::chrono::steady_clock::time_point expiry;
 };

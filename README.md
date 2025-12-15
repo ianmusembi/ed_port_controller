@@ -1,4 +1,4 @@
-# Embedded-Style Event-Driven Port Controller (C++)
+# Embedded-Style Event-Driven(ED) Port Controller (C++)
 
 ## Overview
 This project simulates an embedded telecom control component responsible for managing a network port.  
